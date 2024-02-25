@@ -17,6 +17,7 @@ class App extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
 
+      // mostra la pantalla anomenada Home que es troba a l'arxiu home.dart
       home: Home(
         key: UniqueKey(),
       ),
