@@ -132,18 +132,15 @@ class _HomeState extends State<Home> {
               children: [
                 Container(
                     alignment: Alignment.centerRight,
-                    padding: EdgeInsets.symmetric(
-                        vertical: 24.0,
-                        horizontal: 12.0
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 24,
+                        horizontal: 12
                     ),
                     child: Text(output, style: TextStyle(
-                      fontSize: 48.0,
+                      fontSize: 66,
                       fontWeight: FontWeight.bold,
 
                     ))),
-                Expanded(
-                  child: Divider(),
-                ),
 
 
                 Column(children: [
