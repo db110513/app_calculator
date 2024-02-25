@@ -19,7 +19,7 @@ class _HomeState extends State<Home> {
   double num2 = 0.0;
   String op = "";
 
-  // mètode encarregat de realitzar les operacions matemàtiques / * + - =
+  // clickButton -> encarregat de realitzar les operacions matemàtiques * + - =
   // buttonText -> paràmetre del mètode que té les característiques d'un botó
   clickButton(String buttonText) {
 
