@@ -91,7 +91,7 @@ class _HomeState extends State<Home> {
   }
 
   // crea el widget que permet la visualització dels números dels botons i
-  // també deñ resultat de realitzar les operacions
+  // també del resultat en realitzar les operacions
   Widget buildButton(String button) {
 
     return Expanded(
