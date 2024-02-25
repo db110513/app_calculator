@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-// no explico la lògica de l'app ja que sinó el video seria massa llarg
-
 // StatefulWidget -> dinàmic ja que l'app canvia a l'apretar els botons
 class Home extends StatefulWidget {
 

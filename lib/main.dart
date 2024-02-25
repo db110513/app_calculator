@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'screens/home.dart';
 
+// no explico la lògica de l'app ja que sinó el video seria massa llarg
+
 // main() -> permet l'inici de l'execució de l'app
 void main() => runApp(App());
 
