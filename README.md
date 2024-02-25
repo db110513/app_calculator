@@ -1,4 +1,4 @@
-# calc
+# flutter_calculator
 
 Projecte molt senzill que mostra el funcionament d'una calculadora codificat amb Flutter.
 
