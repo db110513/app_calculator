@@ -105,10 +105,10 @@ class _HomeState extends State<Home> {
     );
   }
 
-
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
+          padding: EdgeInsets.only(top: 150),
             child: Column(
               children: [
                 Container(
@@ -117,11 +117,13 @@ class _HomeState extends State<Home> {
                         vertical: 24,
                         horizontal: 12
                     ),
-                    child: Text(output, style: TextStyle(
-                      fontSize: 66,
-                      fontWeight: FontWeight.bold,
-
-                    ))),
+                    child: Text(output,
+                        style: TextStyle(
+                          fontSize: 66,
+                          fontWeight: FontWeight.bold,
+                        )
+                    )
+                ),
 
 
                 Column(children: [
