@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(new App());
+void main() => runApp(App());
 
 class App extends StatelessWidget {
 
@@ -8,11 +8,11 @@ class App extends StatelessWidget {
 
     return new MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: new ThemeData(
+      theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
 
-      home: new Home(
+      home: Home(
         key: UniqueKey(),
       ),
     );
@@ -34,24 +34,24 @@ class _HomeState extends State<Home> {
   String _output = "0";
   double num1 = 0.0;
   double num2 = 0.0;
-  String operand = "";
+  String op = "";
 
   buttonPressed(String buttonText) {
 
-    if(buttonText == "CLEAR") {
+    if (buttonText == "AC") {
 
       _output = "0";
       num1 = 0.0;
       num2 = 0.0;
-      operand = "";
+      op = "";
 
     }
 
-    else if (buttonText == "+" || buttonText == "-" || buttonText == "/" || buttonText == "X") {
+    else if (buttonText == "+" || buttonText == "-" || buttonText == "/" || buttonText == "*") {
 
       num1 = double.parse(output);
 
-      operand = buttonText;
+      op = buttonText;
 
       _output = "0";
 
@@ -74,22 +74,22 @@ class _HomeState extends State<Home> {
 
       num2 = double.parse(output);
 
-      if(operand == "+") {
+      if (op == "+") {
         _output = (num1 + num2).toString();
       }
-      if(operand == "-") {
+      if (op == "-") {
         _output = (num1 - num2).toString();
       }
-      if(operand == "X") {
+      if (op == "*") {
         _output = (num1 * num2).toString();
       }
-      if(operand == "/") {
+      if (op == "/") {
         _output = (num1 / num2).toString();
       }
 
-      num1 = 0.0;
-      num2 = 0.0;
-      operand = "";
+      num1 = 0;
+      num2 = 0;
+      op = "";
 
     }
 
@@ -101,21 +101,21 @@ class _HomeState extends State<Home> {
 
     print(_output);
 
-    setState(() => output = double.parse(_output).toStringAsFixed(2));
+    setState(() => output = double.parse(_output).toStringAsFixed(0));
 
   }
 
-  Widget buildButton(String buttonText) {
+  Widget buildButton(String button) {
 
     return Expanded(
       child: Padding(
-        padding: EdgeInsets.all(24.0),
+        padding: EdgeInsets.all(5),
         child: OutlinedButton(
-          onPressed: () => buttonPressed(buttonText),
+          onPressed: () => buttonPressed(button),
           child: Text(
-            buttonText,
+            button,
             style: TextStyle(
-              fontSize: 20.0,
+              fontSize: 30,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -126,59 +126,69 @@ class _HomeState extends State<Home> {
 
 
   Widget build(BuildContext context) {
-    return new Scaffold(
-        body: new Container(
-            child: new Column(
+    return Scaffold(
+        body: Container(
+            child: Column(
               children: [
-                new Container(
+                Container(
                     alignment: Alignment.centerRight,
-                    padding: new EdgeInsets.symmetric(
+                    padding: EdgeInsets.symmetric(
                         vertical: 24.0,
                         horizontal: 12.0
                     ),
-                    child: new Text(output, style: new TextStyle(
+                    child: Text(output, style: TextStyle(
                       fontSize: 48.0,
                       fontWeight: FontWeight.bold,
 
                     ))),
-                new Expanded(
-                  child: new Divider(),
+                Expanded(
+                  child: Divider(),
                 ),
 
 
-                new Column(children: [
-                  new Row(children: [
-                    buildButton("7"),
-                    buildButton("8"),
-                    buildButton("9"),
-                    buildButton("/")
-                  ]),
+                Column(children: [
+                  Row(
+                      children: [
+                        buildButton("7"),
+                        buildButton("8"),
+                        buildButton("9"),
+                        buildButton("/")
+                      ]
+                  ),
 
-                  new Row(children: [
-                    buildButton("4"),
-                    buildButton("5"),
-                    buildButton("6"),
-                    buildButton("X")
-                  ]),
+                  Row(
+                      children: [
+                        buildButton("4"),
+                        buildButton("5"),
+                        buildButton("6"),
+                        buildButton("*")
+                      ]
+                  ),
 
-                  new Row(children: [
-                    buildButton("1"),
-                    buildButton("2"),
-                    buildButton("3"),
-                    buildButton("-")
-                  ]),
+                  Row(
+                      children: [
+                        buildButton("1"),
+                        buildButton("2"),
+                        buildButton("3"),
+                        buildButton("-")
+                      ]
+                  ),
 
-                  new Row(children: [
-                    buildButton("."),
-                    buildButton("0"),
-                    buildButton("00"),
-                    buildButton("+")
-                  ]),
+                  Row(
+                      children: [
+                        buildButton("0"),
+                        buildButton("·"),
+                        buildButton("+")
+                      ]
+                  ),
 
-                  new Row(children: [
-                    buildButton("CLEAR"),
-                    buildButton("="),
-                  ])
+                  Row(
+                      children: [
+                        buildButton("AC"),
+                        buildButton("="),
+                      ]
+                  )
+
                 ])
               ],
             )
