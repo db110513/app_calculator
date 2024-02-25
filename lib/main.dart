@@ -36,7 +36,7 @@ class _HomeState extends State<Home> {
   double num2 = 0.0;
   String op = "";
 
-  buttonPressed(String buttonText) {
+  clickButton(String buttonText) {
 
     if (buttonText == "AC") {
 
@@ -111,7 +111,7 @@ class _HomeState extends State<Home> {
       child: Padding(
         padding: EdgeInsets.all(5),
         child: OutlinedButton(
-          onPressed: () => buttonPressed(button),
+          onPressed: () => clickButton(button),
           child: Text(
             button,
             style: TextStyle(
