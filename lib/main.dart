@@ -7,13 +7,12 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return new MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: new ThemeData(
         primarySwatch: Colors.blue,
       ),
 
       home: new Home(
-        title: 'Calculator',
         key: UniqueKey(),
       ),
     );
@@ -22,9 +21,7 @@ class App extends StatelessWidget {
 
 class Home extends StatefulWidget {
 
-  Home({required Key key, required this.title}) : super(key: key);
-
-  final String title;
+  Home({required Key key}) : super(key: key);
 
   _HomeState createState() => new _HomeState();
 
@@ -130,9 +127,6 @@ class _HomeState extends State<Home> {
 
   Widget build(BuildContext context) {
     return new Scaffold(
-        appBar: new AppBar(
-          title: new Text(widget.title),
-        ),
         body: new Container(
             child: new Column(
               children: [
