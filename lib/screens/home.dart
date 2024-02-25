@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+// no explico la lògica de l'app ja que sinó el video seria massa llarg
+
 // StatefulWidget -> dinàmic ja que l'app canvia a l'apretar els botons
 class Home extends StatefulWidget {
 
@@ -13,17 +15,18 @@ class _HomeState extends State<Home> {
 
   String output = "0";
 
-  String _output = "0";
+  String resultat = "0";
   double num1 = 0.0;
   double num2 = 0.0;
   String op = "";
 
   // mètode encarregat de realitzar les operacions matemàtiques / * + - =
+  // buttonText -> paràmetre del mètode que té les característiques d'un botó
   clickButton(String buttonText) {
 
     if (buttonText == "AC") {
 
-      _output = "0";
+      resultat = "0";
       num1 = 0.0;
       num2 = 0.0;
       op = "";
@@ -36,19 +39,19 @@ class _HomeState extends State<Home> {
 
       op = buttonText;
 
-      _output = "0";
+      resultat = "0";
 
     }
 
     else if (buttonText == ".") {
 
-      if (_output.contains(".")) {
-        print("Already conatains a decimals");
+      if (resultat.contains(".")) {
+        print("Conté decimals");
         return;
       }
 
       else {
-        _output = _output + buttonText;
+        resultat = resultat + buttonText;
       }
 
     }
@@ -58,16 +61,16 @@ class _HomeState extends State<Home> {
       num2 = double.parse(output);
 
       if (op == "+") {
-        _output = (num1 + num2).toString();
+        resultat = (num1 + num2).toString();
       }
       else if (op == "-") {
-        _output = (num1 - num2).toString();
+        resultat = (num1 - num2).toString();
       }
       else if (op == "*") {
-        _output = (num1 * num2).toString();
+        resultat = (num1 * num2).toString();
       }
       else {
-        _output = (num1 / num2).toString();
+        resultat = (num1 / num2).toString();
       }
 
       num1 = 0;
@@ -78,13 +81,13 @@ class _HomeState extends State<Home> {
 
     else {
 
-      _output = _output + buttonText;
+      resultat = resultat + buttonText;
 
     }
 
-    print(_output);
+    print(resultat);
 
-    setState(() => output = double.parse(_output).toStringAsFixed(0));
+    setState(() => output = double.parse(resultat).toStringAsFixed(0));
 
   }
 
