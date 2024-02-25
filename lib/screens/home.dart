@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// StatefulWidget -> dinàmic ja que l'app canvia a l'apretar els botons
 class Home extends StatefulWidget {
 
   Home({required Key key}) : super(key: key);
@@ -17,6 +18,7 @@ class _HomeState extends State<Home> {
   double num2 = 0.0;
   String op = "";
 
+  // mètode encarregat de realitzar les operacions matemàtiques / * + -
   clickButton(String buttonText) {
 
     if (buttonText == "AC") {
@@ -86,6 +88,8 @@ class _HomeState extends State<Home> {
 
   }
 
+  // crea el widget que permet la visualització dels números dels botons i
+  // també deñ resultat de realitzar les operacions
   Widget buildButton(String button) {
 
     return Expanded(
@@ -105,6 +109,7 @@ class _HomeState extends State<Home> {
     );
   }
 
+  // widget que mostra per pantalla les tecles de la calculadora
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(

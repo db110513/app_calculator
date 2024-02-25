@@ -5,6 +5,7 @@ void main() => runApp(App());
 
 class App extends StatelessWidget {
 
+  // visualització bàsica de l'app
   Widget build(BuildContext context) {
 
     return new MaterialApp(
