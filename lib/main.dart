@@ -6,7 +6,7 @@ import 'screens/home.dart';
 // main() -> permet l'inici de l'execució de l'app
 void main() => runApp(App());
 
-// StatelessWidget -> mostra l'aparená que no varia
+// StatelessWidget -> mostra l'aparença que no varia
 class App extends StatelessWidget {
 
   // construeix visualització bàsica de l'app
