@@ -18,7 +18,7 @@ class _HomeState extends State<Home> {
   double num2 = 0.0;
   String op = "";
 
-  // mètode encarregat de realitzar les operacions matemàtiques / * + -
+  // mètode encarregat de realitzar les operacions matemàtiques / * + - =
   clickButton(String buttonText) {
 
     if (buttonText == "AC") {
