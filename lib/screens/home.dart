@@ -9,7 +9,7 @@ class Home extends StatefulWidget {
 
 }
 
-
+// State -> construeix la pantalla que varia
 class _HomeState extends State<Home> {
 
   String output = "0";
