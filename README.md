@@ -1,7 +1,7 @@
-# flutter_calculator
+# CALCULADORA
 
-Simple project of a calcultador done using Flutter.
+Calculadora codificada amb Dart fent servir Flutter framework.
 
-Compiled code: 
+Codi compilat:
 
 https://www.loom.com/share/2f9ba45f1c024c9c9edc38ff2ceb46ab
